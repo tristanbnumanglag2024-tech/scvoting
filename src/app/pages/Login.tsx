@@ -24,9 +24,8 @@ export default function Login() {
       if (loggedInUser.role === 'admin') {
         navigate('/admin');
       } else {
-  window.location.href = "/vote";
-}
-    
+        window.location.href = "/vote";
+      }
     } catch (err) {
       setError('Invalid email or password');
     } finally {
