@@ -5,7 +5,8 @@
   Front End: React(Vite)
   Back End: PHP
 
-  Deployed at Vercel and Hostinger
+  Deployed at Vercel and Hostinger|
+  Completed by 3/21/2026
 
   ## Running the code
 
