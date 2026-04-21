@@ -12,7 +12,7 @@ export default function AddPosition() {
   // ✅ FETCH POSITIONS
   const fetchPositions = async () => {
     try {
-      const res = await fetch("http://localhost/SCVOTE/get_positions.php");
+      const res = await fetch("https://scvotingsytem.online/scelection/get_positions.php");
       const data = await res.json();
       setPositions(data);
     } catch (err) {
@@ -39,10 +39,10 @@ export default function AddPosition() {
       const data = new FormData();
       data.append("name", positionName);
 
-      let url = "http://localhost/SCVOTE/add_position.php";
+      let url = "https://scvotingsytem.online/scelection/add_position.php";
 
       if (isEdit && editId !== null) {
-        url = "http://localhost/SCVOTE/update_position.php";
+        url = "https://scvotingsytem.online/scelection/update_position.php";
         data.append("id", editId.toString());
       }
 
@@ -79,7 +79,7 @@ export default function AddPosition() {
       const data = new FormData();
       data.append("id", id.toString());
 
-      const res = await fetch("http://localhost/SCVOTE/delete_position.php", {
+      const res = await fetch("https://scvotingsytem.online/scelection/delete_position.php", {
         method: "POST",
         body: data
       });

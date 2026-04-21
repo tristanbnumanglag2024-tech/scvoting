@@ -36,7 +36,7 @@ export default function UserVoting() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 const checkIfVoted = async () => {
   try {
-    const res = await fetch("http://localhost/SCVOTE/check_voted.php", {
+    const res = await fetch("https://scvotingsytem.online/scelection/check_voted.php", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -61,7 +61,7 @@ const checkIfVoted = async () => {
 
 const fetchData = async (course: string) => {
   try {
-    const res = await fetch("http://localhost/SCVOTE/get_candidates_with_position.php");
+    const res = await fetch("https://scvotingsytem.online/scelection/get_candidates_with_position.php");
     const data = await res.json();
 
     const userCourse = course.toUpperCase();
@@ -130,7 +130,7 @@ useEffect(() => {
     }
 
     try {
-      const res = await fetch("http://localhost/SCVOTE/submit_votes.php", {
+      const res = await fetch("https://scvotingsytem.online/scelection/submit_votes.php", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -355,7 +355,7 @@ useEffect(() => {
                       >
                         <div className="flex flex-col sm:flex-row gap-4">
                           <img
-                            src={`http://localhost/SCVOTE/${candidate.picture}`}
+                            src={`https://scvotingsytem.online/scelection/${candidate.picture}`}
                             alt={`${candidate.first_name} ${candidate.last_name}`}
                             className="w-full sm:w-24 h-48 sm:h-24 rounded-lg object-cover border-2 border-[#800020]/20 flex-shrink-0"
                           />

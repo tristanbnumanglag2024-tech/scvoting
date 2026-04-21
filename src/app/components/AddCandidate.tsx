@@ -45,7 +45,7 @@ export default function AddCandidate() {
   // ✅ FETCH FUNCTION
   const fetchCandidates = async () => {
     try {
-      const res = await fetch("http://localhost/SCVOTE/get_candidates.php");
+      const res = await fetch("https://scvotingsytem.online/scelection/get_candidates.php");
       const data = await res.json();
       setCandidates(data);
     } catch (err) {
@@ -54,7 +54,7 @@ export default function AddCandidate() {
   };
 const fetchPositions = async () => {
   try {
-    const res = await fetch("http://localhost/SCVOTE/get_positions.php");
+    const res = await fetch("https://scvotingsytem.online/scelection/get_positions.php");
     const data = await res.json();
     setPositions(data);
   } catch (err) {
@@ -89,10 +89,10 @@ const fetchPositions = async () => {
       data.append("picture", formData.picture);
     }
 
-    let url = "http://localhost/SCVOTE/add_candidate.php";
+    let url = "https://scvotingsytem.online/scelection/add_candidate.php";
 
     if (isEdit && editId) {
-      url = "http://localhost/SCVOTE/update_candidate.php";
+      url = "https://scvotingsytem.online/scelection/update_candidate.php";
       data.append("id", editId.toString());
     }
 
@@ -158,7 +158,7 @@ const fetchPositions = async () => {
       const data = new FormData();
       data.append("id", id.toString());
 
-      const res = await fetch("http://localhost/SCVOTE/delete_candidate.php", {
+      const res = await fetch("https://scvotingsytem.online/scelection/delete_candidate.php", {
         method: "POST",
         body: data
       });
@@ -412,7 +412,7 @@ const fetchPositions = async () => {
   className="p-3 bg-gradient-to-r from-[#fdfbf7] to-white rounded-lg border border-[#800020]/10"
 >
   <img
-    src={`http://localhost/SCVOTE/${candidate.picture}`}
+    src={`https://scvotingsytem.online/scelection/${candidate.picture}`}
     className="w-10 h-10 rounded-full object-cover mb-2"
   />
 

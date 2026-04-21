@@ -39,7 +39,7 @@ const handleUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
   const data = new FormData();
   data.append("file", file);
 
-  fetch("http://localhost/SCVOTE/upload_students.php", {
+  fetch("https://scvotingsytem.online/scelection/upload_students.php", {
     method: "POST",
     body: data
   })
@@ -66,7 +66,7 @@ export default function VotingResults() {
 
   const fetchResults = async () => {
     try {
-      const res = await fetch("http://localhost/SCVOTE/get_results.php", {
+      const res = await fetch("https://scvotingsytem.online/scelection/get_results.php", {
         credentials: "include"
       });
 
@@ -136,7 +136,7 @@ export default function VotingResults() {
     />
 
     <a
-      href="http://localhost/SCVOTE/download_template.php"
+      href="https://scvotingsytem.online/scelection/download_template.php"
       className="px-3 py-1 bg-[#800020] text-white rounded"
     >
       Download Template

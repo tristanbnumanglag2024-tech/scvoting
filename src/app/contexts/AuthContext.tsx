@@ -25,7 +25,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     const checkSession = async () => {
       try {
-        const res = await fetch("http://localhost/SCVOTE/check_session.php", {
+        const res = await fetch("https://scvotingsytem.online/scelection/check_session.php", {
           credentials: "include"
         });
 
@@ -52,7 +52,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   // ✅ LOGIN
   const login = async (email: string, password: string): Promise<User> => {
-    const res = await fetch("http://localhost/SCVOTE/login.php", {
+    const res = await fetch("https://scvotingsytem.online/scelection/login.php", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -80,7 +80,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   // ✅ LOGOUT
   const logout = async () => {
-    await fetch("http://localhost/SCVOTE/logout.php", {
+    await fetch("https://scvotingsytem.online/scelection/logout.php", {
       credentials: "include"
     });
 
